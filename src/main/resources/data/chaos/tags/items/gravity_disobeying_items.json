@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "chaos:empty_chaos_emerald",
+    "chaos:green_chaos_emerald",
+    "chaos:blue_chaos_emerald",
+    "chaos:light_blue_chaos_emerald",
+    "chaos:purple_chaos_emerald",
+    "chaos:red_chaos_emerald",
+    "chaos:white_chaos_emerald",
+    "chaos:yellow_chaos_emerald"
+
+  ]
+}
