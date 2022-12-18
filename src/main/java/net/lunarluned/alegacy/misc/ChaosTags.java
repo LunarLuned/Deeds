@@ -1,4 +1,4 @@
-package net.lunarluned.chaos.misc;
+package net.lunarluned.alegacy.misc;
 
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;

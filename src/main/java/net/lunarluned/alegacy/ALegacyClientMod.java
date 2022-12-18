@@ -1,8 +1,8 @@
-package net.lunarluned.chaos;
+package net.lunarluned.alegacy;
 
 import net.fabricmc.api.ClientModInitializer;
 
-public class ChaosClientMod implements ClientModInitializer {
+public class ALegacyClientMod implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 

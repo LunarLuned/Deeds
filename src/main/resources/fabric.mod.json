@@ -3,29 +3,30 @@
   "id": "chaos",
   "version": "${version}",
 
-  "name": "Chaos",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Ambient Legacy",
+  "description": "A recreation of everything I made in early 2020 on the Ambient SMP. A christmas gift <3",
   "authors": [
-    "LunarLuned"
+    "LunarLuned",
+    "Ambient_ & Sydokiddo (Textures)"
   ],
   "contact": {
     "homepage": "https://www.twitter.com/lunarluned"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/chaos/icon.png",
+  "icon": "assets/alegacy/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.lunarluned.chaos.Chaos"
+      "net.lunarluned.alegacy.ALegacy"
     ],
     "client": [
-      "net.lunarluned.chaos.ChaosClientMod"
+      "net.lunarluned.alegacy.ALegacyClientMod"
     ]
   },
   "mixins": [
-    "chaos.mixins.json"
+    "alegacy.mixins.json"
   ],
 
   "depends": {
