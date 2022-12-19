@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.common.item;
+package net.lunarluned.alegacy.item;
 
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.lunarluned.alegacy.ALegacy;

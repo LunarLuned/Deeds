@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "id": "chaos",
+  "id": "alegacy",
   "version": "${version}",
 
   "name": "Ambient Legacy",
   "description": "A recreation of everything I made in early 2020 on the Ambient SMP. A christmas gift <3",
   "authors": [
     "LunarLuned",
-    "Ambient_ & Sydokiddo (Textures)"
+    "Ambient_ & Sydokiddo (Texture Help)"
   ],
   "contact": {
     "homepage": "https://www.twitter.com/lunarluned"

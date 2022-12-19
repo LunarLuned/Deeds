@@ -2,7 +2,6 @@ package net.lunarluned.alegacy;
 
 import net.fabricmc.api.ModInitializer;
 import net.lunarluned.alegacy.item.ModItems;
-import net.lunarluned.alegacy.sound.ModSoundEvents;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,7 +12,5 @@ public class ALegacy implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-		ModSoundEvents.registerSounds();
-
 	}
 }

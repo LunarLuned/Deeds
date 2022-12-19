@@ -1,0 +1,8 @@
+{
+  "item.nethercore_sword.swirl": {
+    "subtitle": "item.nethercore_sword.swirl",
+    "sounds": [
+      "alegacy:item/nethercore_sword/nethercore_sword_swirl"
+    ]
+  }
+}

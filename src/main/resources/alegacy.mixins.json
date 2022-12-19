@@ -6,6 +6,7 @@
   "mixins": [
   ],
   "client": [
+    "NethercoreAbilityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
