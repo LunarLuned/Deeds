@@ -18,7 +18,7 @@ public class FoxContractItem extends Item {
     public FoxContractItem(Properties properties) {
         super(properties);
     }
-
+//
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, InteractionHand interactionHand) {
         if (!level.isClientSide) {
