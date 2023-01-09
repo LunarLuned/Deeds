@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "alegacy:item/nethercore_chestplate"
+    "layer0": "deeds:item/nethercore_chestplate"
   }
 }

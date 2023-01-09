@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "alegacy:item/nethercore_pickaxe"
+    "layer0": "deeds:item/nethercore_pickaxe"
   }
 }

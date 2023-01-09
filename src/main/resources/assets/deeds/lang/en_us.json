@@ -1,12 +1,14 @@
 {
   "itemGroup.alegacy.alegacy": "Ambient Legacy",
-  "item.alegacy.nethercore_ingot": "Nethercore Ingot",
-  "item.alegacy.nethercore_pickaxe": "Nethercore Pickaxe",
-  "item.alegacy.nethercore_sword": "Nethercore Sword",
-  "item.alegacy.nethercore_helmet": "Nethercore Helmet",
-  "item.alegacy.nethercore_chestplate": "Nethercore Chestplate",
-  "item.alegacy.nethercore_leggings": "Nethercore Leggings",
-  "item.alegacy.nethercore_boots": "Nethercore Boots",
+  "item.deeds.nethercore_ingot": "Nethercore Ingot",
+  "item.deeds.nethercore_pickaxe": "Nethercore Pickaxe",
+  "item.deeds.nethercore_sword": "Nethercore Sword",
+  "item.deeds.nethercore_helmet": "Nethercore Helmet",
+  "item.deeds.nethercore_chestplate": "Nethercore Chestplate",
+  "item.deeds.nethercore_leggings": "Nethercore Leggings",
+  "item.deeds.nethercore_boots": "Nethercore Boots",
+
+  "item.deeds.fox_devil_contract": "Fox Devil Contract",
 
   "key.category.devils": "Devils",
   "key.deeds.devil_primary": "Primary Ability",

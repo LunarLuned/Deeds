@@ -1,7 +1,7 @@
 package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.lunarluned.alegacy.item.custom.FoxContractItem;
+import net.lunarluned.deeds.item.custom.FoxContractItem;
 import net.lunarluned.deeds.Deeds;
 import net.lunarluned.deeds.item.custom.ModPickaxeItem;
 import net.lunarluned.deeds.item.custom.NethercoreSwordItem;

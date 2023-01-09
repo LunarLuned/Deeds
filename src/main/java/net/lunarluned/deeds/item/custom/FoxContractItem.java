@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.item.custom;
+package net.lunarluned.deeds.item.custom;
 
 import net.lunarluned.deeds.util.IEntityDataSaver;
 import net.minecraft.nbt.CompoundTag;
