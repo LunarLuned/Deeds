@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.item.Tier;

@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.common.entity;
+package net.lunarluned.deeds.common.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.FlyingEntity;

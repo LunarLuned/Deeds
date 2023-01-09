@@ -1,7 +1,7 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.lunarluned.alegacy.ALegacy;
+import net.lunarluned.deeds.ALegacy;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;

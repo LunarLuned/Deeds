@@ -1,7 +1,7 @@
-package net.lunarluned.alegacy;
+package net.lunarluned.deeds;
 
 import net.fabricmc.api.ModInitializer;
-import net.lunarluned.alegacy.item.ModItems;
+import net.lunarluned.deeds.item.ModItems;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

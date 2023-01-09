@@ -1,9 +1,9 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.lunarluned.alegacy.ALegacy;
-import net.lunarluned.alegacy.item.custom.ModPickaxeItem;
-import net.lunarluned.alegacy.item.custom.NethercoreSwordItem;
+import net.lunarluned.deeds.Deeds;
+import net.lunarluned.deeds.item.custom.ModPickaxeItem;
+import net.lunarluned.deeds.item.custom.NethercoreSwordItem;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -42,11 +42,11 @@ public class ModItems {
 
 
     private static Item registerItem(String name, Item item) {
-        return Registry.register(Registry.ITEM, new ResourceLocation(ALegacy.MOD_ID, name), item);
+        return Registry.register(Registry.ITEM, new ResourceLocation(Deeds.MOD_ID, name), item);
     }
 
     public static void registerModItems() {
-        ALegacy.LOGGER.info("Registering mod items for " + ALegacy.MOD_ID);
+        Deeds.LOGGER.info("Registering mod items for " + Deeds.MOD_ID);
     }
 
 }

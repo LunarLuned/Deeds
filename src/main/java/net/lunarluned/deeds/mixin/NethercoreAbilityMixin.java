@@ -1,6 +1,6 @@
-package net.lunarluned.alegacy.mixin;
+package net.lunarluned.deeds.mixin;
 
-import net.lunarluned.alegacy.item.ModItems;
+import net.lunarluned.deeds.item.ModItems;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;

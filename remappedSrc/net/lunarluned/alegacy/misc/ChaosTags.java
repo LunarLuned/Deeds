@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.misc;
+package net.lunarluned.deeds.misc;
 
 import net.minecraft.item.Item;
 import net.minecraft.tag.TagKey;

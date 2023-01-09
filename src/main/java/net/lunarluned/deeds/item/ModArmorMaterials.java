@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

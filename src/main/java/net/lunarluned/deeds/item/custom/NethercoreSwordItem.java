@@ -1,6 +1,6 @@
-package net.lunarluned.alegacy.item.custom;
+package net.lunarluned.deeds.item.custom;
 
-import net.lunarluned.alegacy.sound.ModSoundEvents;
+import net.lunarluned.deeds.sound.ModSoundEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

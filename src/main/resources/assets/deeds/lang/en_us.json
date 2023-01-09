@@ -6,5 +6,10 @@
   "item.alegacy.nethercore_helmet": "Nethercore Helmet",
   "item.alegacy.nethercore_chestplate": "Nethercore Chestplate",
   "item.alegacy.nethercore_leggings": "Nethercore Leggings",
-  "item.alegacy.nethercore_boots": "Nethercore Boots"
+  "item.alegacy.nethercore_boots": "Nethercore Boots",
+
+  "key.category.devils": "Devils",
+  "key.deeds.devil_primary": "Primary Ability",
+  "message.deeds.fox_devil": "Kon.",
+  "message.deeds.no_devil": "You do not have a contract."
 }

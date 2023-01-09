@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy;
+package net.lunarluned.deeds;
 
 import net.fabricmc.api.ClientModInitializer;
 

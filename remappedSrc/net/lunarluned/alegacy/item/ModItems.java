@@ -1,8 +1,8 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.lunarluned.alegacy.ALegacy;
-import net.lunarluned.alegacy.item.custom.ModPickaxeItem;
+import net.lunarluned.deeds.ALegacy;
+import net.lunarluned.deeds.item.custom.ModPickaxeItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;

@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.item.custom;
+package net.lunarluned.deeds.item.custom;
 
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Tier;

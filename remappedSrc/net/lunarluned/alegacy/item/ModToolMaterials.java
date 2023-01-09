@@ -1,4 +1,4 @@
-package net.lunarluned.alegacy.item;
+package net.lunarluned.deeds.item;
 
 public class ModToolMaterials {
 }

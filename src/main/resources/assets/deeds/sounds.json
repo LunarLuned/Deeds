@@ -4,5 +4,10 @@
     "sounds": [
       "alegacy:item/nethercore_sword/nethercore_sword_swirl"
     ]
+  },
+  "mob.piglin_orphan.music": {
+    "sounds": [
+      "alegacy:boss_music/piglin_boss"
+    ]
   }
 }
