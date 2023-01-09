@@ -1,6 +1,7 @@
 package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.lunarluned.alegacy.item.custom.FoxContractItem;
 import net.lunarluned.deeds.Deeds;
 import net.lunarluned.deeds.item.custom.ModPickaxeItem;
 import net.lunarluned.deeds.item.custom.NethercoreSwordItem;
@@ -22,6 +23,8 @@ public class ModItems {
     public static final Item NETHERCORE_SWORD = registerItem("nethercore_sword",
             new NethercoreSwordItem(ModToolMaterials.NETHERCORE,3, -2.4f, new FabricItemSettings().group(ModItemGroup.ALEGACY).fireproof().rarity(Rarity.UNCOMMON)));
 
+    public static final Item FOX_DEVIL_CONTRACT = registerItem("fox_devil_contract",
+            new FoxContractItem(new FabricItemSettings().group(ModItemGroup.ALEGACY).fireproof()));
 
     public static final Item NETHERCORE_HELMET = registerItem("nethercore_helmet",
             new ArmorItem(ModArmorMaterials.NETHERCORE, EquipmentSlot.HEAD,

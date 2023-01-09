@@ -8,6 +8,30 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 
 public class ContractData {
+
+    public static int setContracttoFox(IEntityDataSaver player, int amount) {
+        CompoundTag nbt = player.getPersistentData();
+        int contract = nbt.getInt("contract");
+        if(contract + amount == 0){
+            contract = 1;
+        } else {
+            contract = 0;
+        }
+        nbt.putInt("contract", contract);
+        syncContract(contract, (ServerPlayer) player);
+        return contract;
+    }
+
+    public static int removeContract(IEntityDataSaver player, int amount) {
+        CompoundTag nbt = player.getPersistentData();
+        int contract = nbt.getInt("contract");
+        if(contract + amount >= 1){
+            contract = 0;
+        }
+        syncContract(contract, (ServerPlayer) player);
+        return contract;
+    }
+
     public static int addSRC(IEntityDataSaver player, int amount) {
         CompoundTag nbt = player.getPersistentData();
         int src = nbt.getInt("src");
@@ -18,7 +42,7 @@ public class ContractData {
         }
 
         nbt.putInt("src", src);
-        //sync the data
+        syncSRC(src, (ServerPlayer) player);
         return src;
 
     }
@@ -32,7 +56,7 @@ public class ContractData {
         }
 
         nbt.putInt("src", src);
-        //sync the data
+        syncSRC(src, (ServerPlayer) player);
         return src;
 
     }
@@ -41,5 +65,10 @@ public class ContractData {
         FriendlyByteBuf buffer = PacketByteBufs.create();
         buffer.writeInt(src);
         ServerPlayNetworking.send(player, ModMessages.SRC_SYNC_ID, buffer);
+    }
+    public static void syncContract(int contract, ServerPlayer player) {
+        FriendlyByteBuf buffer = PacketByteBufs.create();
+        buffer.writeInt(contract);
+        ServerPlayNetworking.send(player, ModMessages.CONTRACT_SYNC_ID, buffer);
     }
 }
