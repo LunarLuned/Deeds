@@ -14,8 +14,6 @@ public class ContractData {
         int contract = nbt.getInt("contract");
         if(contract + amount == 0){
             contract = 1;
-        } else {
-            contract = 0;
         }
         nbt.putInt("contract", contract);
         syncContract(contract, (ServerPlayer) player);

@@ -13,5 +13,6 @@
   "key.category.devils": "Devils",
   "key.deeds.devil_primary": "Primary Ability",
   "message.deeds.fox_devil": "Kon.",
-  "message.deeds.no_devil": "You do not have a contract."
+  "message.deeds.no_devil": "You do not have a contract.",
+  "message.deeds.low_src": "You do not have enough SRC."
 }

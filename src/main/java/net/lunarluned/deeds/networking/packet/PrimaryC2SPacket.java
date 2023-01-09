@@ -19,7 +19,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
@@ -27,12 +26,13 @@ import java.util.List;
 public class PrimaryC2SPacket {
     private static final String MESSAGE_FOX_DEVIL_ATTACK = "message.deeds.fox_devil";
     private static final String MESSAGE_NO_CONTRACT = "message.deeds.no_devil";
+    private static final String MESSAGE_LOW_SRC = "message.deeds.low_src";
 
     public static void receive(MinecraftServer server, ServerPlayer player, ServerGamePacketListenerImpl handler,
                                FriendlyByteBuf buf, PacketSender responseSender) {
         // Everything here happens ONLY on the Server!
         ServerLevel world = player.getLevel();
-        //replace THIS with if the player has the fox devil. this is how we'll do the devil stuffs, all in one packet baybee
+
         CompoundTag nbt = ((IEntityDataSaver) player).getPersistentData();
         int src = nbt.getInt("src");
         nbt = ((IEntityDataSaver) player).getPersistentData();
@@ -63,18 +63,19 @@ public class PrimaryC2SPacket {
                     EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
                 }
             }
+            if (src <= 2) {
+                player.displayClientMessage(Component.translatable(MESSAGE_LOW_SRC)
+                        .withStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)), true);
+            }
 
 
-        } else {
+        } else if (contract == 0) {
+            if(src <= 0) {
 
-            ContractData.syncSRC(((IEntityDataSaver) player).getPersistentData().getInt("src"), player);
-
+                ContractData.syncSRC(((IEntityDataSaver) player).getPersistentData().getInt("src"), player);
+                player.displayClientMessage(Component.translatable(MESSAGE_NO_CONTRACT)
+                        .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
+            }
+            }
         }
     }
-
-    private static boolean isAroundWaterThem(ServerPlayer player, ServerLevel world, int size) {
-        return BlockPos.betweenClosedStream(player.getBoundingBox().inflate(size))
-                .map(world::getBlockState).filter(state -> state.is(Blocks.WATER)).toArray().length > 0;
-    }
-
-}
