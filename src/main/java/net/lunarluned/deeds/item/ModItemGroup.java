@@ -7,6 +7,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 
 public class ModItemGroup {
-        public static final CreativeModeTab ALEGACY = FabricItemGroupBuilder.build(new ResourceLocation(Deeds.MOD_ID, "alegacy"),
-            () -> new ItemStack(ModItems.NETHERCORE_INGOT));
+        public static final CreativeModeTab DEEDS = FabricItemGroupBuilder.build(new ResourceLocation(Deeds.MOD_ID, "deeds"),
+            () -> new ItemStack(ModItems.FOX_DEVIL_CONTRACT));
 }

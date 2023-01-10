@@ -16,6 +16,9 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
@@ -48,7 +51,7 @@ public class PrimaryC2SPacket {
                 world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
                         0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                 Minecraft client = Minecraft.getInstance();
-                ContractData.removeSRC(((IEntityDataSaver) player), 1);
+                ContractData.removeSRC(((IEntityDataSaver) player), 3);
 
                 BlockPos blockPos = player.getOnPos();
                 int m;
@@ -60,7 +63,14 @@ public class PrimaryC2SPacket {
                 List<LivingEntity> nearbyEntities = world.getEntitiesOfClass(LivingEntity.class, aABB);
 
                 for (LivingEntity livingEntities : nearbyEntities) {
-                    EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
+                    livingEntities.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, true, true));
+
+                    if (!(livingEntities == player)) {
+                        livingEntities.hurt(DamageSource.MAGIC, 18);
+                        EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
+
+                    }
+                    player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
                 }
             }
             if (src <= 2) {
@@ -70,12 +80,10 @@ public class PrimaryC2SPacket {
 
 
         } else if (contract == 0) {
-            if(src <= 0) {
 
                 ContractData.syncSRC(((IEntityDataSaver) player).getPersistentData().getInt("src"), player);
                 player.displayClientMessage(Component.translatable(MESSAGE_NO_CONTRACT)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
-            }
             }
         }
     }

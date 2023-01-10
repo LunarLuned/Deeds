@@ -1,5 +1,5 @@
 {
-  "itemGroup.alegacy.alegacy": "Ambient Legacy",
+  "itemGroup.deeds.deeds": "Deeds & Devils",
   "item.deeds.nethercore_ingot": "Nethercore Ingot",
   "item.deeds.nethercore_pickaxe": "Nethercore Pickaxe",
   "item.deeds.nethercore_sword": "Nethercore Sword",
@@ -9,6 +9,10 @@
   "item.deeds.nethercore_boots": "Nethercore Boots",
 
   "item.deeds.fox_devil_contract": "Fox Devil Contract",
+  "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon, a massive jaw clashes at your enemy.",
+  "item.deeds.fox_devil_contract.sability": "Secondary Ability : N/A.",
+  "item.deeds.fox_devil_contract.trade": "X : You will take one damage, and temporarily be unable to heal every use.",
+  "item.deeds.src_sac": "Src Sac",
 
   "key.category.devils": "Devils",
   "key.deeds.devil_primary": "Primary Ability",

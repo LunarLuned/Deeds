@@ -8,14 +8,14 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import static net.lunarluned.deeds.util.ContractData.*;
+import static net.lunarluned.deeds.util.ContractData.setContracttoFox;
+import static net.lunarluned.deeds.util.ContractData.syncContract;
 
-public class FoxContractItem extends Item {
+public class FoxContractItem extends AbstractContractItem {
     public FoxContractItem(Properties properties) {
         super(properties);
     }
