@@ -1,11 +1,8 @@
 package net.lunarluned.deeds.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.lunarluned.deeds.item.custom.FoxContractItem;
 import net.lunarluned.deeds.Deeds;
-import net.lunarluned.deeds.item.custom.ModPickaxeItem;
-import net.lunarluned.deeds.item.custom.NethercoreSwordItem;
-import net.lunarluned.deeds.item.custom.SrcSacItem;
+import net.lunarluned.deeds.item.custom.*;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -26,6 +23,9 @@ public class ModItems {
 
     public static final Item FOX_DEVIL_CONTRACT = registerItem("fox_devil_contract",
             new FoxContractItem(new FabricItemSettings().group(ModItemGroup.DEEDS).fireproof()));
+
+    public static final Item BLOOD_DEVIL_CONTRACT = registerItem("blood_devil_contract",
+            new BloodContractItem(new FabricItemSettings().group(ModItemGroup.DEEDS).fireproof()));
 
     public static final Item SRC_SAC = registerItem("src_sac",
             new SrcSacItem(new FabricItemSettings().group(ModItemGroup.DEEDS).fireproof()));
@@ -52,8 +52,12 @@ public class ModItems {
         return Registry.register(Registry.ITEM, new ResourceLocation(Deeds.MOD_ID, name), item);
     }
 
+
+
     public static void registerModItems() {
         Deeds.LOGGER.info("Registering mod items for " + Deeds.MOD_ID);
     }
+
+
 
 }

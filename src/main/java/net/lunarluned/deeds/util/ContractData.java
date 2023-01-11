@@ -12,8 +12,19 @@ public class ContractData {
     public static int setContracttoFox(IEntityDataSaver player, int amount) {
         CompoundTag nbt = player.getPersistentData();
         int contract = nbt.getInt("contract");
-        if(contract + amount == 0){
+        if(contract + amount != 1){
             contract = 1;
+        }
+        nbt.putInt("contract", contract);
+        syncContract(contract, (ServerPlayer) player);
+        return contract;
+    }
+
+    public static int setContracttoBlood(IEntityDataSaver player, int amount) {
+        CompoundTag nbt = player.getPersistentData();
+        int contract = nbt.getInt("contract");
+        if(contract + amount != 2){
+            contract = 2;
         }
         nbt.putInt("contract", contract);
         syncContract(contract, (ServerPlayer) player);

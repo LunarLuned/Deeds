@@ -12,11 +12,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import static net.lunarluned.deeds.util.ContractData.setContracttoFox;
-import static net.lunarluned.deeds.util.ContractData.syncContract;
+import static net.lunarluned.deeds.util.ContractData.*;
 
-public class FoxContractItem extends AbstractContractItem {
-    public FoxContractItem(Properties properties) {
+public class BloodContractItem extends AbstractContractItem {
+    public BloodContractItem(Properties properties) {
         super(properties);
     }
 //
@@ -27,8 +26,8 @@ public class FoxContractItem extends AbstractContractItem {
         int contract = nbt.getInt("contract");
 
         if (!level.isClientSide) {
-            if (contract != 1) {
-                setContracttoFox((IEntityDataSaver) player, 0);
+            if (contract != 2) {
+                setContracttoBlood((IEntityDataSaver) player, 0);
                 syncContract(contract, (ServerPlayer) player);
                 itemStack.shrink(1);
                 player.getCooldowns().addCooldown(this, 500);

@@ -1,6 +1,8 @@
 package net.lunarluned.deeds.networking.packet;
 
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
+import net.lunarluned.deeds.Deeds;
+import net.lunarluned.deeds.effect.ModEffects;
 import net.lunarluned.deeds.util.ContractData;
 import net.lunarluned.deeds.util.IEntityDataSaver;
 import net.minecraft.ChatFormatting;
@@ -28,6 +30,7 @@ import java.util.List;
 
 public class PrimaryC2SPacket {
     private static final String MESSAGE_FOX_DEVIL_ATTACK = "message.deeds.fox_devil";
+
     private static final String MESSAGE_NO_CONTRACT = "message.deeds.no_devil";
     private static final String MESSAGE_LOW_SRC = "message.deeds.low_src";
 
@@ -41,8 +44,17 @@ public class PrimaryC2SPacket {
         nbt = ((IEntityDataSaver) player).getPersistentData();
         int contract = nbt.getInt("contract");
 
+        if ((contract == 0) && (src <= 11)) {
+
+            ContractData.syncSRC(((IEntityDataSaver) player).getPersistentData().getInt("src"), player);
+            player.displayClientMessage(Component.translatable(MESSAGE_NO_CONTRACT)
+                    .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
+        }
+
+        //FOX DEVIL CODE
+
         if(contract == 1) {
-            if(src >= 3) {
+            if(src >= 8) {
 
                 player.displayClientMessage(Component.translatable(MESSAGE_FOX_DEVIL_ATTACK)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
@@ -51,7 +63,7 @@ public class PrimaryC2SPacket {
                 world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
                         0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                 Minecraft client = Minecraft.getInstance();
-                ContractData.removeSRC(((IEntityDataSaver) player), 3);
+                ContractData.removeSRC(((IEntityDataSaver) player), 8);
 
                 BlockPos blockPos = player.getOnPos();
                 int m;
@@ -70,20 +82,41 @@ public class PrimaryC2SPacket {
                         EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
 
                     }
-                    player.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
+                    player.hurt(new Deeds.DemonicDamageSource(), 2.0F);
+                    player.addEffect(new MobEffectInstance(ModEffects.STAGNATED, 300, 0));
                 }
             }
-            if (src <= 2) {
+            if (src <= 8) {
                 player.displayClientMessage(Component.translatable(MESSAGE_LOW_SRC)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)), true);
             }
 
 
-        } else if (contract == 0) {
+        }
 
-                ContractData.syncSRC(((IEntityDataSaver) player).getPersistentData().getInt("src"), player);
-                player.displayClientMessage(Component.translatable(MESSAGE_NO_CONTRACT)
+        // BLOOD DEVIL CODE
+
+        if(contract == 2) {
+            if(src >= 4) {
+
+                player.displayClientMessage(Component.translatable(MESSAGE_FOX_DEVIL_ATTACK)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
+
+                // Play the sound
+                world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
+                        0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+                Minecraft client = Minecraft.getInstance();
+                ContractData.removeSRC(((IEntityDataSaver) player), 4);
+
+
+
             }
+            if (src <= 5) {
+                player.displayClientMessage(Component.translatable(MESSAGE_LOW_SRC)
+                        .withStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)), true);
+            }
+
+
+        }
         }
     }

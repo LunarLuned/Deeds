@@ -9,13 +9,16 @@
   "item.deeds.nethercore_boots": "Nethercore Boots",
 
   "item.deeds.fox_devil_contract": "Fox Devil Contract",
-  "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon, a massive jaw clashes at your enemy.",
-  "item.deeds.fox_devil_contract.sability": "Secondary Ability : N/A.",
+  "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon ) the Fox Devil's jaw clashes at your enemy. - 8 SRC",
+  "item.deeds.fox_devil_contract.sability": "Secondary Ability : N/A. ",
   "item.deeds.fox_devil_contract.trade": "X : You will take one damage, and temporarily be unable to heal every use.",
   "item.deeds.src_sac": "Src Sac",
 
   "key.category.devils": "Devils",
   "key.deeds.devil_primary": "Primary Ability",
+  "key.deeds.devil_secondary": "Secondary Ability",
+
+  "message.deeds.debug": "yeah it works.",
   "message.deeds.fox_devil": "Kon.",
   "message.deeds.no_devil": "You do not have a contract.",
   "message.deeds.low_src": "You do not have enough SRC."
