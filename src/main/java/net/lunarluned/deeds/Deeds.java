@@ -1,10 +1,8 @@
 package net.lunarluned.deeds;
 
 import net.fabricmc.api.ModInitializer;
-import net.lunarluned.deeds.common.registry.entity.ModSpear;
 import net.lunarluned.deeds.effect.ModEffects;
 import net.lunarluned.deeds.item.ModItems;
-import net.lunarluned.deeds.item.SpearItem;
 import net.lunarluned.deeds.sound.ModSoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
 import org.slf4j.Logger;
@@ -19,8 +17,6 @@ public class Deeds implements ModInitializer {
 		ModItems.registerModItems();
 		ModSoundEvents.registerSounds();
 		ModEffects.registerEffects();
-		ModSpear.init();
-		SpearItem.init();
 
 
 	}

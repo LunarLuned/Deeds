@@ -54,39 +54,45 @@ public class PrimaryC2SPacket {
         //FOX DEVIL CODE
 
         if(contract == 1) {
-            if(src >= 8) {
+            if(src >= 4) {
 
-                player.displayClientMessage(Component.translatable(MESSAGE_FOX_DEVIL_ATTACK)
-                        .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
+                if (!player.hasEffect(ModEffects.STAGNATED)) {
 
-                // Play the sound
-                world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
-                        0.5F, world.random.nextFloat() * 0.1F + 0.9F);
-                Minecraft client = Minecraft.getInstance();
-                ContractData.removeSRC(((IEntityDataSaver) player), 8);
 
-                BlockPos blockPos = player.getOnPos();
-                int m;
-                int l;
-                int k = blockPos.getX();
-                int j = 8;
+                    // Play the sound
+                    Minecraft client = Minecraft.getInstance();
 
-                AABB aABB = new AABB(k, l = blockPos.getY(), m = blockPos.getZ(), k + 1, l + 1, m + 1).inflate(j).expandTowards(0.0, world.getHeight(), 0.0);
-                List<LivingEntity> nearbyEntities = world.getEntitiesOfClass(LivingEntity.class, aABB);
+                    BlockPos blockPos = player.getOnPos();
+                    int m;
+                    int l;
+                    int k = blockPos.getX();
+                    int j = 8;
 
-                for (LivingEntity livingEntities : nearbyEntities) {
-                    livingEntities.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 3, true, true));
+                    AABB aABB = new AABB(k, l = blockPos.getY(), m = blockPos.getZ(), k + 1, l + 1, m + 1).inflate(j).expandTowards(0.0, world.getHeight(), 0.0);
+                    List<LivingEntity> nearbyEntities = world.getEntitiesOfClass(LivingEntity.class, aABB);
 
-                    if (!(livingEntities == player)) {
-                        livingEntities.hurt(DamageSource.MAGIC, 18);
-                        EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
+                    for (LivingEntity livingEntities : nearbyEntities) {
 
+                        if (!(livingEntities == player)) {
+                            //this way itll only activate the ability and use the SRC if any entities are found around
+                            player.displayClientMessage(Component.translatable(MESSAGE_FOX_DEVIL_ATTACK)
+                                    .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
+                            world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
+                                    0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+                            ContractData.removeSRC(((IEntityDataSaver) player), 4);
+
+                            livingEntities.hurt(DamageSource.MAGIC, 6);
+                            livingEntities.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 190, 1, true, true));
+                            livingEntities.addEffect(new MobEffectInstance(ModEffects.STUNNED, 190, 0, true, true));
+                            EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
+
+                        }
+                        player.hurt(new Deeds.DemonicDamageSource(), 2.0F);
+                        player.addEffect(new MobEffectInstance(ModEffects.STAGNATED, 450, 0));
                     }
-                    player.hurt(new Deeds.DemonicDamageSource(), 2.0F);
-                    player.addEffect(new MobEffectInstance(ModEffects.STAGNATED, 300, 0));
                 }
             }
-            if (src <= 8) {
+            if (src <= 3) {
                 player.displayClientMessage(Component.translatable(MESSAGE_LOW_SRC)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)), true);
             }
@@ -111,7 +117,7 @@ public class PrimaryC2SPacket {
 
 
             }
-            if (src <= 5) {
+            if (src <= 3) {
                 player.displayClientMessage(Component.translatable(MESSAGE_LOW_SRC)
                         .withStyle(Style.EMPTY.withColor(ChatFormatting.AQUA)), true);
             }
