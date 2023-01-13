@@ -9,17 +9,22 @@
   "item.deeds.nethercore_boots": "Nethercore Boots",
 
   "item.deeds.fox_devil_contract": "Fox Devil Contract",
-  "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon ) the Fox Devil's jaw clashes at your enemy. - 8 SRC",
-  "item.deeds.fox_devil_contract.sability": "Secondary Ability : N/A. ",
+  "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon ) the Fox Devil's jaw clashes at your enemy. - 4 SRC",
+  "item.deeds.fox_devil_contract.sability": "Secondary Ability : Swallow ) If an enemy is stunned from the jaw, extra damage can be dealt. - 8 SRC ",
   "item.deeds.fox_devil_contract.trade": "X : You will take one damage, and temporarily be unable to heal every use.",
   "item.deeds.src_sac": "Src Sac",
+
+  "effect.deeds.bleeding": "Bleeding",
+  "effect.deeds.stagnated": "Stagnated",
+  "effect.deeds.stunned": "Stunned",
 
   "key.category.devils": "Devils",
   "key.deeds.devil_primary": "Primary Ability",
   "key.deeds.devil_secondary": "Secondary Ability",
 
   "message.deeds.debug": "yeah it works.",
-  "message.deeds.fox_devil": "Kon.",
+  "message.deeds.fox_devil": "' Kon. '",
+  "message.deeds.fox_devil_secondary": " 'Swallow them.' ",
   "message.deeds.no_devil": "You do not have a contract.",
   "message.deeds.low_src": "You do not have enough SRC."
 }
