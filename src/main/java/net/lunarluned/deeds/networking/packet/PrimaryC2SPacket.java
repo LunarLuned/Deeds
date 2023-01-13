@@ -107,6 +107,8 @@ public class PrimaryC2SPacket {
         if(contract == 2) {
             if(src >= 4) {
 
+                // make a cooldown sometime
+
                 if (player.getRandom().nextInt(3) == 1) {
                     player.addItem(new ItemStack(ModItems.BLOOD_SWORD));
                     ContractData.removeSRC(((IEntityDataSaver) player), 4);
