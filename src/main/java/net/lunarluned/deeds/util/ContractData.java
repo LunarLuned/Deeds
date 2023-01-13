@@ -6,6 +6,8 @@ import net.lunarluned.deeds.networking.ModMessages;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 
 public class ContractData {
 
@@ -15,6 +17,7 @@ public class ContractData {
         if(contract + amount != 1){
             contract = 1;
         }
+        (((ServerPlayer) player).getAttribute(Attributes.MAX_HEALTH)).addTransientModifier(new AttributeModifier("normalhealth", 0, AttributeModifier.Operation.ADDITION));
         nbt.putInt("contract", contract);
         syncContract(contract, (ServerPlayer) player);
         return contract;
@@ -26,6 +29,8 @@ public class ContractData {
         if(contract + amount != 2){
             contract = 2;
         }
+
+        (((ServerPlayer) player).getAttribute(Attributes.MAX_HEALTH)).addTransientModifier(new AttributeModifier("blooddevilhealth", -4, AttributeModifier.Operation.ADDITION));
         nbt.putInt("contract", contract);
         syncContract(contract, (ServerPlayer) player);
         return contract;

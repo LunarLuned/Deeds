@@ -16,6 +16,7 @@ public class PlayerTickHandler implements ServerTickEvents.StartTick {
                 IEntityDataSaver dataPlayer = ((IEntityDataSaver) player);
                 ContractData.addSRC(dataPlayer, 1);
             }
+
         }
     }
 }

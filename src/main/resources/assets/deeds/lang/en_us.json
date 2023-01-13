@@ -12,6 +12,12 @@
   "item.deeds.fox_devil_contract.pability": "Primary Ability : Kon ) the Fox Devil's jaw clashes at your enemy. - 4 SRC",
   "item.deeds.fox_devil_contract.sability": "Secondary Ability : Swallow ) If an enemy is stunned from the jaw, extra damage can be dealt. - 8 SRC ",
   "item.deeds.fox_devil_contract.trade": "X : You will take one damage, and temporarily be unable to heal every use.",
+
+  "item.deeds.blood_devil_contract": "Blood Devil Contract",
+  "item.deeds.blood_devil_contract.pability": "Primary Ability : Blood Manipulation ) You can create random blood weapons from your blood. - 4 SRC",
+  "item.deeds.blood_devil_contract.sability": "Secondary Ability : Blood Empowerment ) You can drink blood and have a chance to heal, remove status effects, or get strength. ",
+  "item.deeds.blood_devil_contract.trade": "X : You will have less health, and have a low chance to get stunned everytime you use the Primary Ability.",
+
   "item.deeds.src_sac": "Src Sac",
 
   "effect.deeds.bleeding": "Bleeding",

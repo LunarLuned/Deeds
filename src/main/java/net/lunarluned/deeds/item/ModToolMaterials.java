@@ -1,6 +1,7 @@
 package net.lunarluned.deeds.item;
 
 import net.minecraft.util.LazyLoadedValue;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -10,8 +11,11 @@ public enum ModToolMaterials implements Tier {
 
     NETHERCORE(3, 1500, 25.0F, 3.0F, 3, () -> {
         return Ingredient.of(ModItems.NETHERCORE_INGOT);
-    });
+    }),
 
+    BLOOD(0, 3, 25.0F, 6.0F, 0, () -> {
+        return Ingredient.of(Items.BEDROCK);
+    });
 
 
     private final int miningLevel;

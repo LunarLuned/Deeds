@@ -12,7 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.NotNull;
 
-import static net.lunarluned.deeds.util.ContractData.*;
+import static net.lunarluned.deeds.util.ContractData.setContracttoBlood;
+import static net.lunarluned.deeds.util.ContractData.syncContract;
 
 public class BloodContractItem extends AbstractContractItem {
     public BloodContractItem(Properties properties) {
