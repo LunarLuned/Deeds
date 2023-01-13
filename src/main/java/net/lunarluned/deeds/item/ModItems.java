@@ -3,6 +3,7 @@ package net.lunarluned.deeds.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.lunarluned.deeds.Deeds;
 import net.lunarluned.deeds.item.custom.*;
+import net.lunarluned.deeds.item.custom.blood_devil.BloodHammerItem;
 import net.lunarluned.deeds.item.custom.blood_devil.BloodSwordItem;
 import net.lunarluned.deeds.item.custom.blood_devil.BottledBloodItem;
 import net.minecraft.core.Registry;
@@ -35,6 +36,10 @@ public class ModItems {
 
     public static final Item BLOOD_SWORD = registerItem("blood_sword",
             new BloodSwordItem(ModToolMaterials.BLOOD,4, -2.4f, new FabricItemSettings().maxDamage(3).group(ModItemGroup.DEEDS)));
+
+    public static final Item BLOOD_HAMMER = registerItem("blood_hammer",
+            new BloodHammerItem(ModToolMaterials.BLOOD,5, -2.8f, new FabricItemSettings().maxDamage(3).group(ModItemGroup.DEEDS)));
+
 
     public static final Item BOTTLED_BLOOD = registerItem("bottled_blood",
             new BottledBloodItem(new FabricItemSettings().group(ModItemGroup.DEEDS)));

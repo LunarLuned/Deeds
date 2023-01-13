@@ -115,14 +115,14 @@ public class PrimaryC2SPacket {
                     player.hurt(new Deeds.DemonicDamageSource(), 2);
                 } else if (player.getRandom().nextInt(3) == 2) {
                     //replace with Blood Hammer
-                    player.addItem(new ItemStack(ModItems.BOTTLED_BLOOD));
+                    player.addItem(new ItemStack(ModItems.BLOOD_HAMMER));
                     ContractData.removeSRC(((IEntityDataSaver) player), 4);
                     world.playSound(null, player.getOnPos(), SoundEvents.HOSTILE_HURT, SoundSource.PLAYERS,
                             0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                     player.hurt(new Deeds.DemonicDamageSource(), 2);
                 } else if (player.getRandom().nextInt(3) == 3) {
                     //replace with Blood Spear
-                    player.addItem(new ItemStack(ModItems.NETHERCORE_INGOT));
+                    player.addItem(new ItemStack(ModItems.BOTTLED_BLOOD));
                     world.playSound(null, player.getOnPos(), SoundEvents.HOSTILE_HURT, SoundSource.PLAYERS,
                             0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                     ContractData.removeSRC(((IEntityDataSaver) player), 4);

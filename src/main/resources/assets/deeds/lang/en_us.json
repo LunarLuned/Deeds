@@ -16,9 +16,10 @@
   "item.deeds.blood_devil_contract": "Blood Devil Contract",
   "item.deeds.blood_devil_contract.pability": "Primary Ability : Blood Manipulation ) You can create random blood weapons from your blood. - 4 SRC",
   "item.deeds.blood_devil_contract.sability": "Secondary Ability : Blood Empowerment ) You can drink blood and have a chance to heal, remove status effects, or get strength. ",
-  "item.deeds.blood_devil_contract.trade": "X : You will have less health, and have a low chance to get stunned everytime you use the Primary Ability.",
+  "item.deeds.blood_devil_contract.trade": "X : You will have less health, and take 1 heart of damage from using the primary.",
 
   "item.deeds.blood_sword": "Blood Sword",
+  "item.deeds.blood_hammer": "Blood Hammer",
   "item.deeds.bottled_blood": "Bottled Blood",
 
   "item.deeds.src_sac": "Src Sac",
