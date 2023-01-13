@@ -30,6 +30,9 @@ public class BleedingEffect extends MobEffect {
                     player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0));
                 }
             }
+        } else if (!(entity instanceof Player)) {
+            entity.hurt(new Deeds.DemonicDamageSource(), 1);
+            entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140, 0));
         }
     }
 

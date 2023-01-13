@@ -3,6 +3,7 @@ package net.lunarluned.deeds.networking.packet;
 import net.fabricmc.fabric.api.networking.v1.PacketSender;
 import net.lunarluned.deeds.Deeds;
 import net.lunarluned.deeds.effect.ModEffects;
+import net.lunarluned.deeds.item.ModItems;
 import net.lunarluned.deeds.util.ContractData;
 import net.lunarluned.deeds.util.IEntityDataSaver;
 import net.minecraft.ChatFormatting;
@@ -24,6 +25,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
@@ -105,15 +107,27 @@ public class PrimaryC2SPacket {
         if(contract == 2) {
             if(src >= 4) {
 
-                player.displayClientMessage(Component.translatable(MESSAGE_FOX_DEVIL_ATTACK)
-                        .withStyle(Style.EMPTY.withColor(ChatFormatting.DARK_RED)), true);
-
-                // Play the sound
-                world.playSound(null, player.getOnPos(), SoundEvents.PLAYER_ATTACK_CRIT, SoundSource.PLAYERS,
-                        0.5F, world.random.nextFloat() * 0.1F + 0.9F);
-                Minecraft client = Minecraft.getInstance();
-                ContractData.removeSRC(((IEntityDataSaver) player), 4);
-
+                if (player.getRandom().nextInt(3) == 1) {
+                    player.addItem(new ItemStack(ModItems.BLOOD_SWORD));
+                    ContractData.removeSRC(((IEntityDataSaver) player), 4);
+                    world.playSound(null, player.getOnPos(), SoundEvents.HOSTILE_HURT, SoundSource.PLAYERS,
+                            0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+                    player.hurt(new Deeds.DemonicDamageSource(), 2);
+                } else if (player.getRandom().nextInt(3) == 2) {
+                    //replace with Blood Hammer
+                    player.addItem(new ItemStack(ModItems.BOTTLED_BLOOD));
+                    ContractData.removeSRC(((IEntityDataSaver) player), 4);
+                    world.playSound(null, player.getOnPos(), SoundEvents.HOSTILE_HURT, SoundSource.PLAYERS,
+                            0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+                    player.hurt(new Deeds.DemonicDamageSource(), 2);
+                } else if (player.getRandom().nextInt(3) == 3) {
+                    //replace with Blood Spear
+                    player.addItem(new ItemStack(ModItems.NETHERCORE_INGOT));
+                    world.playSound(null, player.getOnPos(), SoundEvents.HOSTILE_HURT, SoundSource.PLAYERS,
+                            0.5F, world.random.nextFloat() * 0.1F + 0.9F);
+                    ContractData.removeSRC(((IEntityDataSaver) player), 4);
+                    player.hurt(new Deeds.DemonicDamageSource(), 2);
+                }
 
 
             }

@@ -39,6 +39,10 @@ public class BottledBloodItem extends Item {
                 livingEntity.removeAllEffects();
                 livingEntity.addEffect(new MobEffectInstance(MobEffects.HEAL, 10, 1));
             }
+        } else if (contract == 0) {
+            if (livingEntity instanceof Player player && player.getRandom().nextInt(100) <= 50) {
+                livingEntity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 100, 0));
+            }
         }
         return itemStack.isEmpty() ? new ItemStack(Items.GLASS_BOTTLE) : itemStack;
     }
