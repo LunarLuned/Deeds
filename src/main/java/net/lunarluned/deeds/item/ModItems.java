@@ -34,10 +34,11 @@ public class ModItems {
             new BloodContractItem(new FabricItemSettings().group(ModItemGroup.DEEDS).fireproof()));
 
     public static final Item BLOOD_SWORD = registerItem("blood_sword",
-            new BloodSwordItem(ModToolMaterials.BLOOD,3, -2.4f, new FabricItemSettings().group(ModItemGroup.DEEDS)));
+            new BloodSwordItem(ModToolMaterials.BLOOD,4, -2.4f, new FabricItemSettings().maxDamage(3).group(ModItemGroup.DEEDS)));
 
     public static final Item BOTTLED_BLOOD = registerItem("bottled_blood",
             new BottledBloodItem(new FabricItemSettings().group(ModItemGroup.DEEDS)));
+
 
 
     public static final Item SRC_SAC = registerItem("src_sac",
