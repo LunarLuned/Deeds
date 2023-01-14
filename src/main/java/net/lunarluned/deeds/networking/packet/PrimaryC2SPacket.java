@@ -83,7 +83,7 @@ public class PrimaryC2SPacket {
                                     0.5F, world.random.nextFloat() * 0.1F + 0.9F);
                             ContractData.removeSRC(((IEntityDataSaver) player), 4);
 
-                            livingEntities.hurt(DamageSource.MAGIC, 6);
+                            livingEntities.hurt(DamageSource.MAGIC, 8);
                             livingEntities.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 190, 1, true, true));
                             livingEntities.addEffect(new MobEffectInstance(ModEffects.STUNNED, 190, 0, true, true));
                             EntityType.EVOKER_FANGS.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
@@ -140,5 +140,6 @@ public class PrimaryC2SPacket {
 
 
         }
+
         }
     }

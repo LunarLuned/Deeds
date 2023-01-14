@@ -83,7 +83,7 @@ public class SecondaryC2SPacket {
                             player.addEffect(new MobEffectInstance(ModEffects.BLEEDING, 200, 0));
                             player.addEffect(new MobEffectInstance(ModEffects.STAGNATED, 450, 0));
 
-                            livingEntities.hurt(DamageSource.MAGIC, 12);
+                            livingEntities.hurt(DamageSource.MAGIC, 18);
                             EntityType.EXPERIENCE_ORB.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
                             EntityType.EXPERIENCE_ORB.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
                             EntityType.EXPERIENCE_ORB.spawn(((ServerLevel) player.level), null, null, player, livingEntities.blockPosition(), MobSpawnType.MOB_SUMMONED, true, false);
